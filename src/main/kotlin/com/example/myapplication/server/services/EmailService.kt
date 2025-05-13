@@ -4,6 +4,9 @@ import java.util.*
 import javax.mail.*
 import javax.mail.internet.InternetAddress
 import javax.mail.internet.MimeMessage
+import javax.mail.PasswordAuthentication
+import javax.mail.Transport
+
 
 object EmailService {
 

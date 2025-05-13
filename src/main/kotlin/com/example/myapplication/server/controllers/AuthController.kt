@@ -1,6 +1,6 @@
 package com.example.myapplication.server.controllers
 
-import androidx.annotation.RequiresApi
+
 import com.example.myapplication.server.database.Database
 import com.example.myapplication.server.models.LoginRequest
 import com.example.myapplication.server.models.RegisterRequest

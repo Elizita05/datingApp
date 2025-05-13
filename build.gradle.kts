@@ -1,9 +1,10 @@
 plugins {
     kotlin("jvm") version "1.9.0"
     kotlin("plugin.serialization") version "1.9.0"
+    id("com.github.johnrengelman.shadow") version "7.1.0"
 }
 
-group = "org.example"
+group = "com.example"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -33,6 +34,12 @@ dependencies {
     implementation("io.ktor:ktor-server-websockets:2.3.0")
 
 
+
+        implementation("com.sun.mail:javax.mail:1.6.2")
+
+
+
+
 }
 
 tasks.test {
@@ -40,4 +47,14 @@ tasks.test {
 }
 kotlin {
     jvmToolchain(11)
+}
+
+// Configura la tarea de shadowJar correctamente
+tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
+    archiveFileName.set("datingApp-all.jar")  // Nombre del archivo JAR generado
+    manifest {
+        attributes(
+            "Main-Class" to "com.example.myapplication.server.MainKt"  // Clase principal de tu app
+        )
+    }
 }
