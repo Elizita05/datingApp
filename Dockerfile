@@ -11,7 +11,8 @@ COPY . /app/
 RUN chmod +x gradlew
 
 # Ejecuta Gradle para limpiar y construir el proyecto
-RUN ./gradlew clean build -x test -x check
+RUN ./gradlew clean build -x test -x check --info
+
 
 # Expone el puerto en el que la aplicación se ejecutará (por defecto Ktor usa 8080)
 EXPOSE 8080
