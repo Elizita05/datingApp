@@ -20,5 +20,5 @@ COPY build/libs/datingApp-all.jar /app/datingApp-all.jar
 EXPOSE 8080
 
 # Ejecuta la aplicación cuando se inicie el contenedor
-CMD ["java", "-jar", "/app/datingApp-all.jar"]
+CMD ["java", "-jar", "build/libs/datingApp-all.jar"]
 
